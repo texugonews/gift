@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Para Gestora 💌</title>
+  <link href="https://fonts.googleapis.com/css2?family=Handlee&family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(#fffafc, #ffeef0);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: 'Handlee', cursive;
+      background-image: url('file:///C:/Users/Julie/Downloads/desenho-de-coelhinho-fofo-e-impressao-de-gato-para-criancas-tendencia-de-design-textil-ilustracao-vetorial_126000-677.avif');
+      background-size: cover;
+
+    .container {
+      text-align: center;
+      padding: 20px;
+      z-index: 1;
+    }
+
+    .envelope {
+      width: 200px;
+      height: 120px;
+      background: #ff6b81;
+      position: relative;
+      margin: auto;
+      cursor: pointer;
+      transition: transform 0.5s ease;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      display: none;
+    }
+
+    .envelope::before,
+    .envelope::after {
+      content: '';
+      position: absolute;
+      border-style: solid;
+    }
+
+    .envelope::before {
+      top: 0;
+      left: 0;
+      border-width: 60px 100px 0 100px;
+      border-color: #ff4d6d transparent transparent transparent;
+    }
+
+    .envelope::after {
+      bottom: 0;
+      left: 0;
+      border-width: 0 100px 60px 100px;
+      border-color: transparent transparent #ff4d6d transparent;
+    }
+
+    .message {
+      margin-top: 20px;
+      font-size: 20px;
+      color: #c0392b;
+      font-family: 'Pacifico', cursive;
+    }
+
+    .letter {
+      display: none;
+      background: #fff9fb;
+      padding: 30px;
+      border-radius: 20px;
+      width: 90%;
+      max-width: 650px;
+      box-shadow: 0 0 20px rgba(255, 105, 135, 0.3);
+      margin: auto;
+      font-size: 20px;
+      color: #5c3d42;
+      text-align: left;
+      position: relative;
+    }
+
+    .letter::before {
+      content: '🌻💛🧸💌';
+      position: absolute;
+      top: -25px;
+      left: 20px;
+      font-size: 24px;
+    }
+
+    .typewriter span {
+      display: inline;
+      border-right: 2px solid #ff6b81;
+      animation: blink 0.7s steps(1) infinite;
+      white-space: pre-wrap;
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+
+    .decor {
+      position: absolute;
+      width: 60px;
+    }
+
+    .top-left { top: 20px; left: 20px; }
+    .top-right { top: 20px; right: 20px; }
+    .bottom-left { bottom: 20px; left: 20px; }
+    .bottom-right { bottom: 20px; right: 20px; }
+
+    .buttons {
+      margin-top: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .buttons a {
+      text-decoration: none;
+      padding: 12px 24px;
+      background-color: #ff6b81;
+      color: white;
+      border-radius: 30px;
+      font-weight: bold;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+      transition: background-color 0.3s;
+    }
+
+    .buttons a:hover {
+      background-color: #e74c3c;
+    }
+
+    .music-button {
+      padding: 15px 30px;
+      background-color: #f194b4;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 18px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    }
+
+    .music-button:hover {
+      background-color: #e55b8e;
+    }
+
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- Girassóis decorativos -->
+  <img src="https://static.vecteezy.com/ti/vetor-gratis/t1/17078454-urso-fofo-segurando-uma-carta-de-amor-mascote-dos-desenhos-animados-doodle-arte-conceito-de-contorno-desenhado-a-mao-ilustracao-do-icone-kawaii-vetor.jpg" class="decor top-left" />
+  <img src="https://static.vecteezy.com/ti/vetor-gratis/t1/17078454-urso-fofo-segurando-uma-carta-de-amor-mascote-dos-desenhos-animados-doodle-arte-conceito-de-contorno-desenhado-a-mao-ilustracao-do-icone-kawaii-vetor.jpg" class="decor top-right" />
+  <img src="https://static.vecteezy.com/ti/vetor-gratis/t1/17078454-urso-fofo-segurando-uma-carta-de-amor-mascote-dos-desenhos-animados-doodle-arte-conceito-de-contorno-desenhado-a-mao-ilustracao-do-icone-kawaii-vetor.jpg" class="decor bottom-left" />
+  <img src="https://static.vecteezy.com/ti/vetor-gratis/t1/17078454-urso-fofo-segurando-uma-carta-de-amor-mascote-dos-desenhos-animados-doodle-arte-conceito-de-contorno-desenhado-a-mao-ilustracao-do-icone-kawaii-vetor.jpg" class="decor bottom-right" />
+
+  <!-- Música de fundo -->
+  <audio id="bgMusic" src="file:///C:/Users/Julie/Downloads/Lo-fi%20for%20Quiet%20Minds%20%F0%9F%8C%99%20%EF%BD%9C%20Calm%20Your%20Thoughts%20in%2030%20Seconds.mp3" loop></audio>
+
+  <div class="container">
+    <button class="music-button" onclick="startExperience()">Clique aqui para tocar uma musiquinha 🎶</button>
+    <div class="message" id="nextMessage" style="display:none;">Agora clique no envelope para abrir sua surpresa 💌</div>
+    
+    <div class="envelope" onclick="openLetter()" id="envelope"></div>
+
+    <div class="letter">
+      <p class="typewriter" id="typewriter"><span></span></p>
+      <div class="buttons" id="musicButtons" style="display:none;">
+        <p>🌸 Segunda parte do presente: ouça essas músicas especiais 🌸</p>
+        <a href="https://www.youtube.com/watch?v=nLIJJjLMRaA" target="_blank">🎶 Música 1</a>
+       
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const fullText = `Oi chefinha,
+
+Feliz aniversário! Que seu novo ciclo seja repleto de alegrias, saúde e realizações.\nAgradeço por ser uma gestora tão paciente, amorosa e sempre presente.\nSeu apoio constante e sua liderança inspiradora fazem toda a diferença.\nÉ uma honra seguir você como exemplo todos os dias.\nParabéns pelo seu dia! 🌻💖`;
+
+    let index = 0;
+
+    function startExperience() {
+      const audio = document.getElementById("bgMusic");
+      audio.volume = 0.15; // volume ambiente
+      audio.play();
+
+      document.querySelector(".music-button").style.display = "none";
+      document.getElementById("nextMessage").style.display = "block";
+      document.getElementById("envelope").style.display = "block";
+    }
+
+    function openLetter() {
+      document.getElementById('envelope').style.display = 'none';
+      document.getElementById('nextMessage').style.display = 'none';
+      document.querySelector('.letter').style.display = 'block';
+
+      typeWriterEffect();
+    }
+
+    function typeWriterEffect() {
+      const span = document.querySelector('#typewriter span');
+      const interval = setInterval(() => {
+        if (index < fullText.length) {
+          span.textContent += fullText[index];
+          index++;
+        } else {
+          clearInterval(interval);
+          span.style.border = 'none';
+          document.getElementById('musicButtons').style.display = 'flex';
+        }
+      }, 60);
+    }
+  </script>
+</body>
